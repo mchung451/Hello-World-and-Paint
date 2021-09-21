@@ -73,27 +73,27 @@ public class paint {
         // Message shows how many paint cans you need
         switch (paintNeededInt){
             case 1:
-                System.out.println("   You only need 1 can of paint!");
+                System.out.println("You only need 1 can of paint!");
                 break;
             case 2,3,4:
-                System.out.println("   You need a few cans of paint!");
+                System.out.println("You need a few cans of paint!");
                 break;
             default:
-                System.out.println("   You need a lot of paint!");
+                System.out.println("You need a lot of paint!");
         }
 
         // Total cost
         float totalCost = canPrice*paintNeededInt;
-        System.out.print(" The total cost of the paint required is £" + totalCost);
+        System.out.println("The total cost of the paint required is £" + totalCost);
         System.out.println(windowNo);
 
-        // There 10% discount for every paint can for a maximum of 10 per customer
+        // There 10% discount for every paint can upto a maximum of 10 cans per customer. Any cans purchased after this limit will not recieve a discount
         if (paintNeededInt <= 10){
             totalCost *= 0.9;
-            System.out.print("A discount has been applied to your total. The total cost after the offer is £" + totalCost);
+            System.out.println("A discount has been applied to your total. The total cost after the discount is £" + totalCost);
         }
         else{
-            System.out.print("Sorry no discounts");
+            System.out.println("Sorry no discounts");
         }
 
         // In 1 day, a single painter can apply 0.5m^3 of paint
@@ -102,12 +102,13 @@ public class paint {
         float totalApplied = 0f;
         float totalPaintNeeded = (2*roomLength*roomHeight+2*roomWidth*roomHeight-doorHeight*doorHeight-windowNo*windowHeight*windowLength);
 
+        // Given we know the volume of paint a painter can apply in a day, create a while loop to see how long it takes to paint the room
         while (totalApplied < totalPaintNeeded) {
             days += 1;
             totalApplied = days*paintInADay;
         }
 
-        System.out.println("\nThe total number of days a single painter needs to paint the room is: " + days);
+        System.out.println("The total number of days a single painter needs to paint the room is: " + days);
 
     }
 }
