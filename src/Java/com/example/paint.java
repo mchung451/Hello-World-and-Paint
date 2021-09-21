@@ -16,7 +16,7 @@ public class paint {
 
         float canPrice = 0.0f;
 
-        // Writing an if/else statement for cost of a sinlge can of paint
+        // Writing an if/else statement for cost of a single can of paint
         if (paintCan > 0.1){
             canPrice += 1.50;
             System.out.println("This can of paint costs £"+canPrice);
@@ -70,6 +70,7 @@ public class paint {
         // Determining the number of cans needed
         System.out.println("The number of cans of paint needed is: " + paintNeededInt);
 
+        // Message shows how many paint cans you need
         switch (paintNeededInt){
             case 1:
                 System.out.println("   You only need 1 can of paint!");
@@ -83,8 +84,30 @@ public class paint {
 
         // Total cost
         float totalCost = canPrice*paintNeededInt;
-        System.out.print(" The total cost is £" + totalCost);
+        System.out.print(" The total cost of the paint required is £" + totalCost);
+        System.out.println(windowNo);
 
-        System.out.println("FINISHED");
+        // There 10% discount for every paint can for a maximum of 10 per customer
+        if (paintNeededInt <= 10){
+            totalCost *= 0.9;
+            System.out.print("A discount has been applied to your total. The total cost after the offer is £" + totalCost);
+        }
+        else{
+            System.out.print("Sorry no discounts");
+        }
+
+        // In 1 day, a single painter can apply 0.5m^3 of paint
+        float paintInADay = 0.5f;
+        float days = 0f;
+        float totalApplied = 0f;
+        float totalPaintNeeded = (2*roomLength*roomHeight+2*roomWidth*roomHeight-doorHeight*doorHeight-windowNo*windowHeight*windowLength);
+
+        while (totalApplied < totalPaintNeeded) {
+            days += 1;
+            totalApplied = days*paintInADay;
+        }
+
+        System.out.println("\nThe total number of days a single painter needs to paint the room is: " + days);
+
     }
 }
