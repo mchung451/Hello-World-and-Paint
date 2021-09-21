@@ -112,18 +112,18 @@ public class paint {
 
         // Asking what colour paint they want
 
-        System.out.println("Pick a colour that you would like to paint your walls\n Please enter the number paired with each colour shown below\nEnter '1' for red\nEnter '2' for blue\nEnter '3' for green");
+        System.out.println("Pick a colour that you would like to paint your walls\nPlease enter the number paired with each colour shown below\nEnter '1' for red\nEnter '2' for blue\nEnter '3' for green");
         Integer wallColour = user_input.nextInt();
         System.out.println(wallColour);
         Integer [] paintColours = {1,2,3};
 
         for (Integer colour : paintColours){
             if (wallColour == colour) {
-                System.out.println("There is paint available");
+                System.out.println("There is paint available\nYour room will be painted in "+ days + " days");
                 break;
             }
             else if (wallColour > 3){
-                System.out.println("Sorry we don't have that colour of paint\nPlease restart the program and pick a valid paint colour");
+                System.out.println("Sorry we don't have that colour of paint available\nPlease restart the program and pick a valid paint colour");
                 break;
             }
             else {
