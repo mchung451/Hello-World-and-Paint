@@ -1,6 +1,8 @@
 package Java.com.example;
 
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 
 public class paint {
 
@@ -11,7 +13,6 @@ public class paint {
     }
 
     public static void main(String[] args) {
-
         Scanner user_input = new Scanner(System.in);
 
         // Welcome message
@@ -27,7 +28,8 @@ public class paint {
         if (paintCan > 0.1) {
             canPrice += 1.55;
             System.out.println("This can of paint costs £" + canPrice);
-        } else {
+        }
+        else {
             canPrice += 2.55;
             System.out.println("This can of paint costs £" + canPrice);
         }
@@ -65,7 +67,8 @@ public class paint {
 
         if (windowNo == 0) {
             ;
-        } else {
+        }
+        else {
             System.out.println("Enter the window length: ");
             windowLength += windowLength + user_input.nextFloat();
 
@@ -101,16 +104,19 @@ public class paint {
         if (paintNeededInt <= 10) {
             totalCostPaint *= 0.9;
             System.out.println("\nA discount has been applied to your total. The total cost of paint after the discount is £" + totalCostPaint);
-        } else {
+        }
+        else {
             System.out.println("\nSorry no discounts");
         }
 
         // Payment Methods
         if (totalCostPaint < 10) {
             System.out.println("\nCash Payments Only. £10 minimum card spend");
-        } else if (totalCostPaint < 45) {
+        }
+        else if (totalCostPaint < 45) {
             System.out.println("\nCash, Card and Contactless Payments accepted");
-        } else {
+        }
+        else {
             System.out.print("\nCash and Card Payments only. £45 contactless limit");
         }
         // In 1 day, a single painter can apply 0.5m^3 of paint
@@ -152,5 +158,14 @@ public class paint {
                 ;
             }
         }
+
+        List<Brands> brands1 = new ArrayList<Brands>();
+        brands1.add(new Brands());
+
+        for (Brands b: brands1){
+            System.out.println(b.getClass());
+            b.name();
+        }
+
     }
 }
