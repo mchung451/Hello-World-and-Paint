@@ -4,9 +4,8 @@ import java.util.Scanner;
 
 public class paint {
 
-    public float newMethod (float paintCostTotal, float labourCostTotal){
-        paintCostTotal = 0;
-        labourCostTotal = 0;
+    public static float newMethod(float paintCostTotal, float labourCostTotal){
+        System.out.println("The total cost of paint and labour is: £"+ (paintCostTotal+ labourCostTotal));
         return (paintCostTotal + labourCostTotal);
     }
 
@@ -103,7 +102,7 @@ public class paint {
         // There 10% discount for every paint can upto a maximum of 10 cans per customer. Any cans purchased after this limit will not recieve a discount
         if (paintNeededInt <= 10){
             totalCost *= 0.9;
-            System.out.println("\nA discount has been applied to your total. The total cost after the discount is £" + totalCost);
+            System.out.println("\nA discount has been applied to your total. The total cost of paint after the discount is £" + totalCost);
         }
         else{
             System.out.println("\nSorry no discounts");
@@ -132,6 +131,11 @@ public class paint {
         }
 
         System.out.println("\n\nThe total number of days a single painter needs to paint the room is: " + days);
+
+        // Determining labour costs. Assume a painter is payed £100 a day;
+        float totalLabourCost = 100*days;
+        System.out.println("A painter costs £100 per day\nThe total cost of labour is: " + totalLabourCost);
+        float finalCost = newMethod(totalLabourCost,totalCost);
 
         // Asking what colour paint they want
 
