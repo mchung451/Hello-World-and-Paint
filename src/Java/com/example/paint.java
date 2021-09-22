@@ -3,6 +3,13 @@ package Java.com.example;
 import java.util.Scanner;
 
 public class paint {
+
+    public float newMethod (float paintCostTotal, float labourCostTotal){
+        paintCostTotal = 0;
+        labourCostTotal = 0;
+        return (paintCostTotal + labourCostTotal);
+    }
+
     public static void main (String[] args) {
 
         Scanner user_input = new Scanner(System.in);
@@ -47,20 +54,26 @@ public class paint {
         float doorHeight = user_input.nextFloat();
 
         // What is the thickness of the layer of paint
-        System.out.print("Enter thickness of paint layer in meters: ");
+        System.out.print("Information about paint layer thickness can be found using the link below:\nhttps://askinglot.com/how-many-microns-are-in-a-paint-coat\n\nEnter thickness of paint layer in meters: ");
         float paintThickness = user_input.nextFloat();
 
         // Inputting the number of windows
         System.out.print ("Enter number of windows: ");
         Integer windowNo = user_input.nextInt();
 
-        // Inputting the window length
-        System.out.print ("Enter the window length: ");
-        float windowLength = user_input.nextFloat();
+        float windowLength = 0f;
+        float windowHeight = 0f;
 
-        // Inputting the window height
-        System.out.print ("Enter the window height: ");
-        float windowHeight = user_input.nextFloat();
+        if (windowNo == 0){
+            ;
+        }
+        else{
+            System.out.println("Enter the window length: ");
+            windowLength += windowLength + user_input.nextFloat();
+
+            System.out.println("Enter the window height: ");
+            windowHeight += windowHeight + user_input.nextFloat();
+        }
 
         // Amount of paint needed
         float paintNeeded =((2*roomLength*roomHeight+2*roomWidth*roomHeight-doorLength*doorHeight-windowNo*windowHeight*windowLength)*paintThickness)/paintCan;
@@ -90,12 +103,22 @@ public class paint {
         // There 10% discount for every paint can upto a maximum of 10 cans per customer. Any cans purchased after this limit will not recieve a discount
         if (paintNeededInt <= 10){
             totalCost *= 0.9;
-            System.out.println("A discount has been applied to your total. The total cost after the discount is £" + totalCost);
+            System.out.println("\nA discount has been applied to your total. The total cost after the discount is £" + totalCost);
         }
         else{
-            System.out.println("Sorry no discounts");
+            System.out.println("\nSorry no discounts");
         }
 
+        // Payment Methods
+        if (totalCost < 10){
+            System.out.println("\nCash Payments Only. £10 minimum card spend");
+        }
+        else if (totalCost < 45 ){
+            System.out.println("\nCash, Card and Contactless Payments accepted");
+        }
+        else{
+            System.out.print("\nCash and Card Payments only. £45 contactless limit");
+        }
         // In 1 day, a single painter can apply 0.5m^3 of paint
         float paintInADay = 0.5f;
         float days = 0f;
@@ -108,11 +131,11 @@ public class paint {
             totalApplied = days*paintInADay;
         }
 
-        System.out.println("The total number of days a single painter needs to paint the room is: " + days);
+        System.out.println("\n\nThe total number of days a single painter needs to paint the room is: " + days);
 
         // Asking what colour paint they want
 
-        System.out.println("Pick a colour that you would like to paint your walls\nPlease enter the number paired with each colour shown below\nEnter '1' for red\nEnter '2' for blue\nEnter '3' for green");
+        System.out.println("\n\nPick a colour that you would like to paint your walls\nPlease enter the number paired with each colour shown below\nEnter '1' for red\nEnter '2' for blue\nEnter '3' for green");
         Integer wallColour = user_input.nextInt();
         System.out.println(wallColour);
         Integer [] paintColours = {1,2,3};
@@ -122,13 +145,11 @@ public class paint {
                 System.out.println("There is paint available\nYour room will be painted in "+ days + " days");
                 break;
             }
-            else if (wallColour > 3){
+            else {
                 System.out.println("Sorry we don't have that colour of paint available\nPlease restart the program and pick a valid paint colour");
                 break;
             }
-            else {
-                continue;
-            }
+
         }
 
     }
