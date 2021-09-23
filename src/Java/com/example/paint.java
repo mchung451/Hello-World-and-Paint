@@ -178,11 +178,11 @@ public class paint {
         Bathtub myBathtub = new Bathtub();
 
         if (bathtubConfirmation == 1) {
-            System.out.println("Enter the height of the bathtub:");
+            System.out.println("Enter the height of the bathtub in meters:");
             myBathtub.setBathtubHeight(user_input.nextFloat());
-            System.out.println("Enter the length of the bathtub:");
+            System.out.println("Enter the length of the bathtub in meters:");
             myBathtub.setBathtubLength(user_input.nextFloat());
-            System.out.println("Enter the width of the bathtub:");
+            System.out.println("Enter the width of the bathtub in meters:");
             myBathtub.setBathtubWidth(user_input.nextFloat());
             myBathtub.bathtubWallArea();
         }

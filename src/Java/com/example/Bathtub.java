@@ -11,6 +11,13 @@ public class Bathtub{
     public float setBathtubLength;
     public float setBathtubWidth;
 
+    public Bathtub(float v) {
+    }
+
+    public Bathtub() {
+
+    }
+
 
     //////////////Constructors/////////////////
 
@@ -31,6 +38,6 @@ public class Bathtub{
 
     public static void bathtubWallArea(){
         bathtubWallArea = (bathtubHeight*bathtubLength+bathtubHeight*bathtubWidth);
-        System.out.println("The wall area covered by the bathtub is: " + bathtubWallArea);
+        System.out.println("The wall area covered by the bathtub is: " + bathtubWallArea + "m^2");
     }
 }
