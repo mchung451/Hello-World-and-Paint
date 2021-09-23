@@ -2,10 +2,9 @@ package Java.com.example;
 
 public class Brands extends paint{
 
-    public Object setName;
+
     ////////////////Attributes///////////////
     private String Name;
-
 
     ////////////////Constructors/////////////
 

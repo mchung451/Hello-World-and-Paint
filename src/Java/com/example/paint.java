@@ -163,8 +163,31 @@ public class paint {
         brands1.add(new Brands());
 
         for (Brands b: brands1){
+            System.out.println("\n\n");
             System.out.println(b.getClass());
             b.name();
+        }
+
+
+        // Asking the user if they have a bathtub
+        System.out.println("Do you have a bathtub? Answer either '1' for yes or '2' for no");
+        Integer bathtubConfirmation = user_input.nextInt();
+
+        // Bathtub variables
+
+        Bathtub myBathtub = new Bathtub();
+
+        if (bathtubConfirmation == 1) {
+            System.out.println("Enter the height of the bathtub:");
+            myBathtub.setBathtubHeight(user_input.nextFloat());
+            System.out.println("Enter the length of the bathtub:");
+            myBathtub.setBathtubLength(user_input.nextFloat());
+            System.out.println("Enter the width of the bathtub:");
+            myBathtub.setBathtubWidth(user_input.nextFloat());
+            myBathtub.bathtubWallArea();
+        }
+        else{
+            ;
         }
 
     }

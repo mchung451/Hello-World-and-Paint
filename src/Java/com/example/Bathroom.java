@@ -1,0 +1,10 @@
+package Java.com.example;
+
+public class Bathroom extends paint{
+
+    /////////////////Attributes///////////////
+
+    ////////////////Constructors//////////////
+
+    ///////////////Methods////////////////////
+}
